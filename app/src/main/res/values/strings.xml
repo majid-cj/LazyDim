@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lazy Dim</string>
+
+    <string name="time_15">15 Seconds</string>
+    <string name="time_30">30 Seconds</string>
+    <string name="time_60">1 Minute</string>
+    <string name="time_120">2 Minutes</string>
+    <string name="time_300">5 Minutes</string>
+    <string name="time_600">10 Minutes</string>
+    <string name="time_forever">Forever</string>
+    <string name="appwidget_text">Lazy Dim</string>
+    <string name="add_widget">Add LazyDim</string>
+</resources>
