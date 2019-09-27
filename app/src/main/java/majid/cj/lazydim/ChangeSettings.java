@@ -46,8 +46,30 @@ public class ChangeSettings {
                 SetScreenTimeOut(timeout, brightness);
             }
         }catch (Exception e){
-            Log.i("COUGHT_SOMETHING", e.getMessage());
+            Log.i("CAUGHT_SOMETHING", e.getMessage());
         }
+    }
+
+    public void AdjustToAuto(boolean checked){
+        try{
+            Settings.System.putInt(this.context.getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE,
+                    (checked)? Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC: Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+        }catch (Exception e){
+            Log.i("CAUGHT_SOMETHING", e.getMessage());
+        }
+    }
+
+    public int GetScreenMode(){
+        return Settings.System.getInt(this.context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS_MODE, 0);
+    }
+
+    public int GetScreenTimeOut(){
+        return Settings.System.getInt(this.context.getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 0);
+    }
+
+    public int GetScreenBrightness(){
+        return Settings.System.getInt(this.context.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, 0);
     }
 
     public PowerManager.WakeLock getPmWakeLock(){

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <android.support.v7.widget.Toolbar
@@ -13,9 +14,31 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:title="@string/app_name"
-        app:titleTextColor="@android:color/white"
-        android:layout_alignParentTop="true"/>
+        app:titleTextColor="@android:color/white" />
 
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/adjust_brightness_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adjust_auto"
+        android:layout_margin="8dp"
+        android:textSize="@dimen/radio_text_size"
+        android:textColor="@color/colorPrimary"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="4dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time_out"
+        android:textSize="@dimen/radio_text_size"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:fontFamily="@font/lato"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <RadioGroup
         android:id="@+id/screen_time_out_radio"
@@ -23,8 +46,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="8dp"
-        android:padding="8dp"
-        android:layout_centerInParent="true">
+        android:padding="8dp">
 
         <RadioButton
             android:id="@+id/time_15000"
@@ -99,7 +121,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/screen_time_out_radio"
         android:layout_margin="8dp"
         android:padding="8dp"
         android:orientation="horizontal"
@@ -120,7 +141,8 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:layout_margin="4dp"
             android:layout_weight="1"/>
+
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
